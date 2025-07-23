@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fitness Workouts</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        img { width: 150px; height: auto; }
+        .workout { margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Workout List</h1>
+    {% for workout in workouts %}
+        <div class="workout">
+            <a href="{{ url_for('workout_detail', name=workout.name) }}">
+                <img src="{{ url_for('static', filename=workout.image) }}" alt="{{ workout.name }}">
+                <p>{{ workout.name }}</p>
+            </a>
+        </div>
+    {% endfor %}
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ workout.name }}</title>
+</head>
+<body>
+    <h1>{{ workout.name }}</h1>
+    <img src="{{ url_for('static', filename=workout.image) }}" width="300">
+    <h2>Steps:</h2>
+    <ol>
+        {% for step in workout.steps %}
+            <li>{{ step }}</li>
+        {% endfor %}
+    </ol>
+    <a href="{{ url_for('index') }}">Back to Home</a>
+</body>
+</html>
